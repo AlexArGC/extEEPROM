@@ -166,7 +166,7 @@ I2C I/O status, zero if successful *(byte)*. See the [Arduino Wire.endTransmissi
 ```c++
 byte myData[10];
 //read 10 bytes starting at location 42
-byte i2cStat = myEEPROM.read(42, &myData, 10);
+byte i2cStat = myEEPROM.read(42, myData, 10);  // myData is already a pointer to an array, or &myData[5] pointer to element
 if ( i2cStat != 0 ) {
 	//there was a problem
 	if ( i2cStat == EEPROM_ADDR_ERR) {
